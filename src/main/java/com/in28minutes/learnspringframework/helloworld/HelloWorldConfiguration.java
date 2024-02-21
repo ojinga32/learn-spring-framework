@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringframework;
+package com.in28minutes.learnspringframework.helloworld;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -39,7 +39,7 @@ public class HelloWorldConfiguration {
 	}
 
 	@Bean
-	public Person personFive(String name, int age, @Qualifier("personQualifier")Address address) {	// 파라미터로 전달할때는 빈Name
+	public Person personFive(String name, int age, @Qualifier("addressQualifier")Address address) {	// 파라미터로 전달할때는 빈Name
 		return new Person(name, age, address);
 	}
 	
@@ -49,6 +49,7 @@ public class HelloWorldConfiguration {
 	}
 	
 	@Bean
+	@Qualifier("addressQualifier")
 	public Address address() {
 		return new Address("Baker Street", "London");
 	}

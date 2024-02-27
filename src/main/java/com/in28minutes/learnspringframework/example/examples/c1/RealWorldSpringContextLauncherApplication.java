@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringframework.example.a1;
+package com.in28minutes.learnspringframework.example.examples.c1;
 
 import java.util.Arrays;
 
@@ -8,17 +8,19 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan("com.in28minutes.learnspringframework.example.a1")
-public class GamingAppLauncherApplication {
+@ComponentScan
+public class RealWorldSpringContextLauncherApplication {
 	
 	public static void main(String[] args) {
 
 		try(var context = 
 				new AnnotationConfigApplicationContext
-					(GamingAppLauncherApplication.class)) {
+					(RealWorldSpringContextLauncherApplication.class)) {
 			
-				Arrays.stream(context.getBeanDefinitionNames())
-					.forEach(System.out::println);
+//				Arrays.stream(context.getBeanDefinitionNames())
+//					.forEach(System.out::println);
+				
+				System.out.println(context.getBean(BusinessCalculationSerivce.class).findMax());
 			
 		}
 	}

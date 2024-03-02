@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class RealWorldSpringContextLauncherApplication {
 	
 	public static void main(String[] args) {
-
+// 브런치 수정 후
 		try(var context = 
 				new AnnotationConfigApplicationContext
 					(RealWorldSpringContextLauncherApplication.class)) {

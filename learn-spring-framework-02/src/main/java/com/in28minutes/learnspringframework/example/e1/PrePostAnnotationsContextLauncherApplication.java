@@ -21,7 +21,9 @@ class SomeClass {
 	
 	@PostConstruct	// 의존성 주입이 완료되어 초기화가 수행된 후 실행되어야 하는 메소드에서 사용 가능
 	public void initialize() {
-		someDependency.getReady();
+		someDependency.getReady();	
+		// 의존성이 와이어링 되자마자 초기화 로직을 실행하려면 PostConstruct 
+		// 예를 들어 데이터베이스에서 데이터 등을 가져올 때 사용
 	}
 	
 	SomeClass(SomeDependency someDependency) {
